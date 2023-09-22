@@ -1,0 +1,6 @@
+appId: keyboard-tester
+productName: Desktop Keyboard Tester
+directories:
+  output: dist
+files:
+  - "dist/**/*"
