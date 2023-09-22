@@ -1,0 +1,16 @@
+.unpressed {
+  padding: 8px;
+  border: 2px solid black;
+  background-color: #808080;
+  transition: background-color 0.7s;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 25px;
+  color: whitesmoke;
+}
+
+.pressed {
+  background-color: #484444;
+  transition: background-color 0.7s;
+}

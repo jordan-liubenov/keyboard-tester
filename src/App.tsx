@@ -1,15 +1,29 @@
-import React from "react"
+import React, { useState } from "react"
 import "./App.css"
+import Button from "./components/Button/Button"
 
-function App() {
+const App = () => {
+  const [keyPressed, setKeyPressed] = useState<string>("")
+  const [keyEvent, setKeyEvent] = useState()
+
+  const handleKeyDown = (event: any) => {
+    setKeyPressed(() => event.key)
+    setKeyEvent(() => event)
+  }
+
+  const handleKeyUp = (event: any) => {
+    setKeyPressed(() => event.key)
+    setKeyEvent(() => event)
+  }
+
+  window.addEventListener("keydown", handleKeyDown)
+  window.addEventListener("keyup", handleKeyUp)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="test" />
-        <p>
-          <code>hello();</code>
-        </p>
-      </header>
+      <p>
+        <Button keyPressed={keyPressed} keyEvent={keyEvent} />
+      </p>
     </div>
   )
 }
