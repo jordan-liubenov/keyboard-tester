@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "./App.css"
 import Button from "./components/Button/Button"
+import Keyboard from "./components/Keyboard/Keyboard"
 
 const App = () => {
   const [keyPressed, setKeyPressed] = useState<string>("")
@@ -12,7 +13,7 @@ const App = () => {
   }
 
   const handleKeyUp = (event: any) => {
-    setKeyPressed(() => event.key)
+    setKeyPressed(() => "")
     setKeyEvent(() => event)
   }
 
@@ -22,7 +23,7 @@ const App = () => {
   return (
     <div className="App">
       <p>
-        <Button keyPressed={keyPressed} keyEvent={keyEvent} />
+        <Keyboard keyPressed={keyPressed} keyEvent={keyEvent} />
       </p>
     </div>
   )

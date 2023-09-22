@@ -2,12 +2,9 @@ import "./Button.css"
 import { useState, useEffect } from "react"
 
 interface ButtonProps {
-  keyPressed: string
+  buttonLegend: string
+  keyPressed?: string
   keyEvent?: Event
-}
-
-enum AllButtons {
-  Control = "Control",
 }
 
 const Button = (props: ButtonProps) => {
@@ -18,7 +15,10 @@ const Button = (props: ButtonProps) => {
   }
 
   const handleButtonStyle = (): string => {
-    if (props.keyPressed === AllButtons.Control && props.keyEvent?.type === "keydown") {
+    if (
+      props.keyEvent?.type === "keydown" &&
+      props?.buttonLegend === props?.keyPressed?.toUpperCase()
+    ) {
       return "unpressed pressed"
     } else if (props.keyEvent?.type === "keyup") {
       return "unpressed"
@@ -28,18 +28,9 @@ const Button = (props: ButtonProps) => {
 
   return (
     <>
-      <div hidden={props?.keyEvent?.type === "keyup"}>{props.keyPressed} has been pressed</div>
-      <br />
-      <br />
-
-      <br />
-
-      <br />
-
-      <br />
-
+      {/* <div hidden={props?.keyEvent?.type === "keyup"}>{props.keyPressed.toUpperCase()}</div> */}
       <button className={handleButtonStyle()} onClick={() => buttonPressHandler()}>
-        Ctrl
+        {props?.buttonLegend}
       </button>
     </>
   )
