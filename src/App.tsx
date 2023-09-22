@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "./App.css"
 import Button from "./components/Button/Button"
 import Keyboard from "./components/Keyboard/Keyboard"
+import PressedKeyDisplay from "./components/PressedKeyDisplay/PressedKeyDisplay"
 
 const App = () => {
   const [keyPressed, setKeyPressed] = useState<string>("")
@@ -22,6 +23,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <PressedKeyDisplay keyPressed={keyPressed} keyEvent={keyEvent} />
       <p>
         <Keyboard keyPressed={keyPressed} keyEvent={keyEvent} />
       </p>

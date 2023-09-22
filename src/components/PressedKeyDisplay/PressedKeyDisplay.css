@@ -1,0 +1,10 @@
+.historyKey {
+  padding: 8px;
+  border: 5px solid black;
+  background-color: #808080;
+  transition: background-color 0.7s;
+  border-radius: 10px;
+  font-family: monospace;
+  font-size: 45px;
+  color: whitesmoke;
+}

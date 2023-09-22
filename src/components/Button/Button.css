@@ -8,10 +8,9 @@
   font-size: 35px;
   color: whitesmoke;
   width: 50px;
-  /* Add subtle shadow */
 }
 
 .pressed {
-  background-color: #484444;
-  transition: background-color 0.4s;
+  background-color: #474444;
+  transition: background-color 0.25s;
 }
