@@ -5,6 +5,10 @@
   transition: background-color 0.7s;
   border-radius: 10px;
   font-family: monospace;
-  font-size: 45px;
+  font-size: 35px;
   color: whitesmoke;
+
+  position: absolute;
+  margin: 0 auto;
+  top: 10px;
 }

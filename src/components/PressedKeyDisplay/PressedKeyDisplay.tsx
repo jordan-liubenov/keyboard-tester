@@ -5,6 +5,8 @@ import "./PressedKeyDisplay.css"
 interface PressedKeyDisplayProps {
   keyPressed: string
   keyEvent?: Event
+  clearHistory: boolean
+  handleClearHistory: (toggle: boolean) => void
 }
 
 const PressedKeyDisplay = (props: PressedKeyDisplayProps) => {
@@ -31,7 +33,7 @@ const PressedKeyDisplay = (props: PressedKeyDisplayProps) => {
         </div>
       )
 
-      keyHistoryCopy.push(props?.keyPressed.toUpperCase())
+      keyHistoryCopy.push(props?.keyPressed.toUpperCase() + " ")
       historyDisplayCopy.push(historyDisplayElement)
 
       setKeyHistoryDisplay(() => historyDisplayCopy)
@@ -40,9 +42,16 @@ const PressedKeyDisplay = (props: PressedKeyDisplayProps) => {
     }
   }, [props?.keyPressed])
 
+  useEffect(() => {
+    if (props?.clearHistory) {
+      setKeyHistory(() => [])
+      props.handleClearHistory(false)
+    }
+  }, [props.clearHistory])
+
   return (
     <div>
-      <h3 className="historyKey">{keyHistory}</h3>
+      {keyHistory.length > 0 && <h4 className="historyKey">{keyHistory}</h4>}
       {/* {renderHistory()} */}
     </div>
   )
