@@ -30,9 +30,9 @@
 }
 
 .clearHistoryButton button {
-  position: fixed;
+  /* position: fixed;
   top: 20px;
-  right: 20px;
+  right: 20px; */
 
   padding: 8px;
   border: 3px solid black;
@@ -40,9 +40,10 @@
   transition: background-color 0.7s;
   border-radius: 10px;
   font-family: monospace;
-  font-size: 15px;
+  font-size: 25px;
   color: whitesmoke;
   cursor: pointer;
+  margin-top: 30px;
 }
 
 .clearHistoryButton button:hover {

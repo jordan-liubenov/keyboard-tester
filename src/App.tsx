@@ -5,7 +5,7 @@ import PressedKeyDisplay from "./components/PressedKeyDisplay/PressedKeyDisplay"
 import ClearHistory from "./components/ClearHistory/ClearHistory"
 
 const App = () => {
-  const [keyPressed, setKeyPressed] = useState<string>("")
+  const [keyPressed, setKeyPressed] = useState<string>("none")
   const [keyEvent, setKeyEvent] = useState<Event | undefined>(undefined)
   const [clearHistory, setClearHistory] = useState<boolean>(false)
 
@@ -13,6 +13,7 @@ const App = () => {
     if (event.type === "keydown") {
       setKeyPressed(() => event.key)
       setKeyEvent(() => event)
+      console.log(event)
     } else if (event.type === "keyup") {
       setKeyPressed(() => "")
       setKeyEvent(() => event)
@@ -28,9 +29,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="clearHistoryButton">
-        <ClearHistory handleClearHistory={handleClearHistory} />
-      </div>
       <PressedKeyDisplay
         keyPressed={keyPressed}
         keyEvent={keyEvent}
@@ -39,6 +37,9 @@ const App = () => {
       />
       <p>
         <Keyboard keyPressed={keyPressed} keyEvent={keyEvent} />
+        <div className="clearHistoryButton">
+          <ClearHistory handleClearHistory={handleClearHistory} />
+        </div>
       </p>
     </div>
   )

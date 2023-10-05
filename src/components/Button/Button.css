@@ -12,5 +12,5 @@
 
 .pressed {
   background-color: #474444;
-  transition: background-color 0.25s;
+  transition: background-color 0.15s;
 }

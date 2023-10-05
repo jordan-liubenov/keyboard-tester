@@ -33,7 +33,10 @@ export enum AlphaKeys {
   ">" = ">",
   "/" = "/",
 }
-// 12, 11, 10
+
+export enum ModKeys {
+  Space = "Space",
+}
 
 export const orderAlphaKeys = (legendArray: string[]) => {
   const firstRow = legendArray.slice(0, 12)

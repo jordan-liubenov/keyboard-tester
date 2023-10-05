@@ -3,7 +3,7 @@ interface ClearHistoryProps {
 }
 
 const ClearHistory = (props: ClearHistoryProps) => {
-  return <button onClick={() => props?.handleClearHistory(true)}>Clear input history</button>
+  return <button onClick={() => props?.handleClearHistory(true)}>Clear</button>
 }
 
 export default ClearHistory
