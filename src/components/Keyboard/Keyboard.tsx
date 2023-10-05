@@ -37,9 +37,9 @@ const Keyboard = (props: KeyboardProps) => {
         })}
       </div>
       <div>
-        <div className="LShift">
+        {/* <div className="LShift">
           {"\0"}Shift{"\0"}{" "}
-        </div>
+        </div> */}
         {thirdRow.map((legend) => {
           return (
             <Button
@@ -52,8 +52,8 @@ const Keyboard = (props: KeyboardProps) => {
         })}
       </div>
       <div className="bottomRow">
-        <div className="LCtrl">Ctr</div>
-        <div className="Win">Win</div>
+        {/* <div className="LCtrl">Ctr</div>
+        <div className="Win">Win</div> */}
         <div className="LAlt">Alt</div>
         <div className="RAlt">Alt</div>
         <div className="spacebar">{"\0"}</div>
