@@ -13,6 +13,9 @@ const Keyboard = (props: KeyboardProps) => {
   return (
     <>
       <div>
+        <div className="modContainer">
+          <div className="Tab">⇥</div>
+        </div>
         {firstRow.map((legend) => {
           return (
             <Button
@@ -25,6 +28,9 @@ const Keyboard = (props: KeyboardProps) => {
         })}
       </div>
       <div>
+        <div className="modContainer">
+          <div className="Caps">⇩</div>
+        </div>
         {secondRow.map((legend) => {
           return (
             <Button
@@ -37,9 +43,9 @@ const Keyboard = (props: KeyboardProps) => {
         })}
       </div>
       <div>
-        {/* <div className="LShift">
-          {"\0"}Shift{"\0"}{" "}
-        </div> */}
+        <div className="modContainer">
+          <div className="LShift">⇧</div>
+        </div>
         {thirdRow.map((legend) => {
           return (
             <Button
